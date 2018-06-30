@@ -85,7 +85,8 @@ let parameters = req.body.result.parameters;
                     else {
                       winningStatement = "Kings lost this match by "+requiredGame.score;
                     }
-                    return res.json({
+                    return res.json
+                    ({
                         speech: 'Last game between Kings and '+parameters.team+' was played on '+requiredGame.date+' .'+winningStatement,
                         displayText: 'Last game between Kings and '+parameters.team+' was played on '+requiredGame.date+' .'+winningStatement,
                         source: 'game schedule'

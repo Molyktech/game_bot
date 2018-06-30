@@ -1,0 +1,11 @@
+{
+	"result": {
+		"resolvedQuery": "last game with Portland",
+		"action": "schedule",
+		"parameters": {
+			"game_occurence": "previous",
+			"team": "Portland",
+			"team1": ""
+		}
+	}
+}
