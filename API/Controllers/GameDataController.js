@@ -6,19 +6,16 @@ var GameSchedule = mongoose.model('GameSchedule');
 
 exports.processRequest = function(req, res) {
 
-   if (req.body.result.action == "schedule") {
+  if (req.body.result.action == "schedule") {
     getTeamSchedule(req,res)
-  }
-  else if (req.body.result.action == "tell.about")
-  {
-      getTeamStats(req,res)
+  } else if (req.body.result.action == "tell.about") {
+    getTeamStats(req,res)
   }
 };
 
 function getTeamStats(req,res){
 
-    let teamToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.team ? req.body.result.parameters.team : 'Unknown';
-
+  let teamToSearch = req.body.result && req.body.result.parameters && req.body.result.parameters.team ? req.body.result.parameters.team : 'Unknown';
 
   TeamInfo.findOne({name:teamToSearch},function(err,teamExists)
       {
@@ -64,7 +61,7 @@ function getTeamSchedule(req,res)
   // });
 
   let parameters = req.body.result.parameters;
-  if (parameters.team1 == "")
+  if (!parameters.team1)
   {
     let game_occurence = parameters.game_occurence;
     let team = parameters.team;
