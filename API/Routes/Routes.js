@@ -1,14 +1,19 @@
 'use strict';
+
 var express = require('express');
+var gameDataController = require('../Controllers/GameDataController');
+
 module.exports = function(app) {
-  var gameDataController = require('../Controllers/GameDataController');
 var apiRoutes =  express.Router();
-app.get('/',function(req,res){
-    res.send('Welcome to Paddy Lift');
+
+  app.get('/',function(req,res) {
+      res.send('Welcome to Paddy Lift');
   });
-// registerUser Route
+
+  // registerUser Route
   app.get('/games', (req, res) => {
 
   })
-    app.post('/ask', gameDataController.processRequest);
+  
+  app.post('/ask', gameDataController.processRequest);
 };
