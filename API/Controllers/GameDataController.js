@@ -64,7 +64,7 @@ function getTeamSchedule(req,res)
   // });
 
   let parameters = req.body.result.parameters;
-  if (parameters.team1 == "")
+  if (!parameters.team1)
   {
     let game_occurence = parameters.game_occurence;
     let team = parameters.team;
